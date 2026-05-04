@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentScript = document.currentScript;
     const scriptSrc = currentScript ? currentScript.getAttribute("src") : "layout.js";
+    const scriptUrl = new URL(scriptSrc, document.baseURI);
+    const scriptDir = new URL(".", scriptUrl);
     const prefix = scriptSrc.replace(/layout\.js$/, "");
 
     const layoutStyles = `
@@ -273,7 +275,7 @@ nav {
 
     const injectContent = (element, filePath, template, fixFn) => {
         if (!element) return;
-        fetch(prefix + filePath)
+        fetch(new URL(filePath, scriptDir).href)
             .then(res => {
                 if (!res.ok) throw new Error(`${filePath} not found`);
                 return res.text();
