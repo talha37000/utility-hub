@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+    overflow: hidden;
+}
+
+/* Background aesthetic glow */
+.bg-animation {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #00d2ff;
+    filter: blur(150px);
+    opacity: 0.2;
+    z-index: -1;
+    animation: move 10s infinite alternate;
+}
+
+@keyframes move {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 25px;
+    width: 350px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Screen Styling */
+.screen-container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+input {
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00d2ff;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 10px 20px;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.scanline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 210, 255, 0.1);
+    top: 0;
+    z-index: 2;
+    animation: scanning 4s linear infinite;
+}
+
+@keyframes scanning {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+/* Buttons Styling */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 60px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operators {
+    color: #00d2ff;
+    font-weight: bold;
+}
+
+.clear {
+    color: #ff4d4d;
+}
+
+.delete {
+    color: #ffb347;
+    font-size: 0.9rem;
+}
+
+.equal {
+    grid-row: span 2;
+    height: 100%;
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+.equal:hover {
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
+}
+
+.zero {
+    grid-column: span 2;
+}

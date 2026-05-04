@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Arena: RPS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="round-badge">Round <span id="round-num">1</span>/5</div>
+        <h2>Neon Arena</h2>
+
+        <div class="score-board">
+            <div class="score-card">
+                <small>PLAYER</small>
+                <span id="myscore">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="score-card">
+                <small>CPU</small>
+                <span id="computerscore">0</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="rock" class="move-btn">✊</button>
+            <button id="paper" class="move-btn">✋</button>
+            <button id="scissors" class="move-btn">✌️</button>
+        </div>
+
+        <div class="display-area">
+            <p id="result">Ready for Round 1?</p>
+            <p id="history-peak">High Score: <span id="high-score">0</span></p>
+        </div>
+
+        <button id="reset-game">Reset Arena</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
