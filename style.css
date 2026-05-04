@@ -45,8 +45,8 @@ nav {
 
 /* FIX: Logo was 200x200 inside a 60px nav */
 .logo {
-    width: 45px;
-    height: 45px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
 }
 
