@@ -74,12 +74,22 @@ nav {
     gap: 8px;
 }
 
+.dropdown a span {
+    display: inline;
+    color: #1f2937;
+    font-size: 16px;
+}
+
 .dropdown a:last-child {
     border-bottom: none;
 }
 
 .dropdown a:hover {
     background-color: #2563eb;
+    color: #ffffff;
+}
+
+.dropdown a:hover span {
     color: #ffffff;
 }
 
