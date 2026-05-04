@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const layoutStyles = `
 body {
     padding-top: 60px;
+    margin: 0;
 }
 
 /* NAVIGATION */
@@ -174,7 +175,6 @@ nav {
 .stayconnected {
     text-align: center;
     padding: 20px 5%;
-    border-top: 1px solid #334155;
 }
 
 .bottom {
