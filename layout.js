@@ -5,58 +5,111 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefix = scriptSrc.replace(/layout\.js$/, "");
 
     const layoutStyles = `
+body {
+    padding-top: 60px;
+}
+
+/* NAVIGATION */
 nav {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.85rem;
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
-    position: sticky;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    position: fixed;
     top: 0;
-    z-index: 999;
+    left: 0;
+    z-index: 100;
+    padding: 0 15px;
+    gap: 10px;
 }
-nav .right {
+
+.logo {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+}
+
+.right {
+    cursor: pointer;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 4px;
+    white-space: nowrap;
 }
-nav .dropdown {
+
+.right:hover {
+    color: #2563eb;
+}
+
+.right:hover .dropdown {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
 }
-nav .dropdown a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: #0f172a;
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 160px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 200;
+}
+
+.dropdown a {
     text-decoration: none;
-    font-weight: 600;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #1f2937;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
-nav .logo {
-    height: 48px;
-    width: auto;
+
+.dropdown a:last-child {
+    border-bottom: none;
 }
+
+.dropdown a:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.fa-solid {
+    padding: 5px;
+}
+
+.fa-house {
+    color: #2563eb;
+}
+
 .search-box {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    background: #f8fafc;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #f1f5f9;
     border: 1px solid #cbd5e1;
 }
+
 .search-box input {
     border: none;
     outline: none;
     background: transparent;
     color: #0f172a;
-    min-width: 170px;
+    font-size: 14px;
+    min-width: 150px;
 }
+
 .search-box button {
     border: none;
     background: transparent;
@@ -64,41 +117,79 @@ nav .logo {
     cursor: pointer;
     font-size: 1rem;
 }
+
+/* FOOTER */
 .footer {
     width: 100%;
-    background: #1e293b;
-    color: #e2e8f0;
-    padding: 3rem 1.5rem 1.5rem;
+    background-color: #1e293b;
+    margin-top: 40px;
 }
-.footer a {
-    color: #93c5fd;
-    text-decoration: none;
-}
-.footer .mainfooter {
+
+.mainfooter {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 1.5rem;
+    gap: 40px;
+    padding: 40px 5%;
     align-items: start;
 }
-.footer .mainfooter h2 {
-    margin-bottom: 1rem;
+
+.footer .name h2,
+.footer .explore h2,
+.footer .populartools h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
 }
-.footer .bottom {
-    margin-top: 1.75rem;
-    text-align: center;
+
+.footer .name p,
+.footer .stayconnected p {
     color: #cbd5e1;
-    font-size: 0.95rem;
+    font-size: 15px;
+    line-height: 1.5;
 }
+
+.explore a, .populartools a {
+    display: block;
+    color: #93c5fd;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.explore a:hover, .populartools a:hover {
+    color: #60a5fa;
+}
+
+.stayconnected {
+    text-align: center;
+    padding: 20px 5%;
+    border-top: 1px solid #334155;
+}
+
+.bottom {
+    text-align: center;
+    padding: 20px 5%;
+    color: #94a3b8;
+    font-size: 14px;
+    border-top: 1px solid #334155;
+}
+
 @media (max-width: 900px) {
-    nav, .footer .mainfooter {
-        flex-direction: column;
-        align-items: flex-start;
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 15px;
     }
-    .footer .mainfooter {
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+    .mainfooter {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
-}
-`;
+}`;
 
     if (!document.getElementById("layout-shared-styles")) {
         const styleEl = document.createElement("style");
