@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+
+    text-align: center;
+}
+
+.contactus {
+    margin-top: 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    object-fit: contain;
+
+
+}
+
+.phone {
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    background-color: rgb(210, 213, 218);
+    border-radius: 20px;
+    padding: 10px;
+
+
+}
+
+.whattsapp {
+    padding: 10px;
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    background-color: rgb(210, 213, 218);
+    border-radius: 20px;
+}
+
+.e-mail {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    background-color: rgb(210, 213, 218);
+}
+
+.phone i {
+    color: rgb(41, 218, 159);
+}
+
+.whattsapp i {
+    color: green;
+}
+
+.e-mail i {
+    color: blue;
+}
+
+.contactus h4 {
+    font-size: 25px;
+}
+
+.contactus button {
+    padding: 10px 40px;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid green;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: green;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
