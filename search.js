@@ -51,7 +51,7 @@ const tools = [
         name: "To Do List",
         keywords: ["list", "to do list", "tasks"],
         image: "media/to do list.png",
-        link: "TO DO LIST/index.html"
+        link: "TO DO LIST/index.html",
     }
 ];
 
