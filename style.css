@@ -701,6 +701,9 @@ nav a:hover {
     flex-direction: column;
     border: 1px solid #e2e8f0;
 }
+.results .card a {
+    text-decoration:none;
+}
 
 .results .card:hover {
     transform: translateY(-5px);
