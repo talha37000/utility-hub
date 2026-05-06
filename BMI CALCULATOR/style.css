@@ -44,7 +44,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
-    /* Gives "breathing room" */
+  margin-top: 80px;
 }
 
 
