@@ -1,0 +1,171 @@
+/* Local Tool Styles */
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f1f5f9;
+}
+
+/* The wrapper that centers the tool and handles the navbar gap */
+.tool-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Start from top */
+    padding: 120px 20px 60px 20px;
+    /* Chrome Fix: Top padding for Navbar */
+}
+
+.todo-container {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Styles */
+h1 {
+    color: #1e293b;
+    margin-bottom: 5px;
+    text-align: left;
+    /* Keep title left-aligned inside the card */
+}
+
+#task-count {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #2563eb;
+    transition: width 0.4s ease;
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input:focus {
+    border-color: #2563eb;
+}
+
+.add-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+}
+
+/* List & Scrolling Logic */
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    transition: 0.3s ease;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 16px;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.task-text::-webkit-scrollbar {
+    display: none;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.btn-check {
+    color: #d1d5db;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-check:hover {
+    color: #10b981;
+}
+
+.btn-delete {
+    color: #fecaca;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+}
+
+/* Checked State */
+li.checked {
+    opacity: 0.6;
+}
+
+li.checked .task-text {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+li.checked .btn-check {
+    color: #10b981;
+}

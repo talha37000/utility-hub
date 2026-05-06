@@ -6,7 +6,6 @@
     --card: rgba(30, 41, 59, 0.7);
 }
 
-/* --- GLOBAL LAYOUT FIX --- */
 body {
     margin: 0;
     display: flex;
@@ -25,7 +24,7 @@ body {
     padding: 80px 20px;
 }
 
-/* --- SEARCH BOX FIX --- */
+
 .main-nav-form {
     display: flex !important;
     background: white !important;
@@ -97,7 +96,7 @@ nav .search-box i {
     color: #6b7280 !important;
 }
 
-/* --- VAULTGEN COMPONENTS --- */
+
 .glass-vault {
     background: var(--card);
     backdrop-filter: blur(10px);
