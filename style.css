@@ -274,6 +274,15 @@ nav {
     padding: 14px 0;
     margin-top: 20px;
 }
+.contactus a {
+    text-decoration: none;
+    display: block; /* Makes the entire area clickable */
+    width: 100%;
+}
+
+.contactus button {
+    pointer-events: none; /* Passes the click through the button to the <a> tag */
+}
 
 /* ============================================
     MOBILE RESPONSIVENESS
