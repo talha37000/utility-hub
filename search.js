@@ -9,6 +9,7 @@ const tools = [
         name: "BMI Calculator",
         keywords: ["bmi", "health", "body mass"],
         image: "media/bmi calculator.png",
+        
         link: "BMI CALCULATOR/INDEX.HTML"
     },
     {
