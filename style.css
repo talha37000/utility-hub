@@ -723,6 +723,9 @@ nav a:hover {
 .results .card button:hover {
     background-color: #2563eb;
 }
+.results .card a{
+    text-decoration:none;
+}
 
 /* --- Missing Styles for Contact Us --- */
 .contactus {
