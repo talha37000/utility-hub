@@ -524,36 +524,47 @@ nav a:hover {
 @media (max-width: 640px) {
 
    
+   @media (max-width: 640px) {
+    /* Reduce Nav height for mobile */
     nav {
-        justify-content: space-between;
-        padding: 0 12px;
-        gap: 8px;
+        padding: 0 10px;
+        min-height: 50px;
+    }
+
+    /* FIX 1: Shrink Logo for mobile screens */
+    .logo {
+        width: 90px; /* Reduced from 120px */
+    }
+
+    /* FIX 2: Flexible Search Box */
+    .search-box {
+        flex: 1; /* Allows it to shrink/grow based on available space */
+        max-width: 150px; /* Prevents it from pushing everything off-screen */
+        margin: 0 5px;
     }
 
     .search-box input {
-        width: 130px;
-        font-size: 13px;
+        width: 100%; /* Fills the flex container */
+        font-size: 12px;
     }
 
-    nav>.right span {
-        display: none;
+    /* FIX 3: Dropdown fits text size */
+    nav > .right span {
+        display: none; /* Keep "Quick Links" hidden on small mobile */
     }
+
     .dropdown {
-     
-        left: 0 !important; 
+        left: 0 !important;
         transform: none !important;
-        
-    
-        width: 180px; 
-        
-      
-        top: 100%; 
+        width: auto !important; /* Resets fixed 180px */
+        min-width: 140px; /* Ensures it's at least wide enough for icons+text */
+        white-space: nowrap; /* Prevents text from wrapping to new lines */
     }
 
-    .right {
-     
-        position: relative; 
+    .dropdown a {
+        padding: 10px 15px; /* Comfortable spacing for fingers */
     }
+
 
    
     .hero-section {
