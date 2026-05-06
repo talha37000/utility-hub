@@ -1,8 +1,3 @@
-/* ============================================
-   UTILITY HUB — RESPONSIVE STYLESHEET
-   ============================================ */
-
-/* --- RESET & BASE --- */
 *,
 *::before,
 *::after {
@@ -16,11 +11,15 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
+
+
 }
 
 body {
     background-color: #f8fafc;
     color: #1f2937;
+    font-family: sans-serif;
+    margin: 0;
     font-family: sans-serif;
 }
 
@@ -29,25 +28,40 @@ body {
    ============================================ */
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 60px;
+    min-height: 60px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
     padding: 0 15px;
     gap: 10px;
 }
 
 /* FIX: Logo was 200x200 inside a 60px nav */
 .logo {
-    width: 130px;
-    height: 130px;
+
+    width: 120px;
+    height: auto;
+
     object-fit: contain;
+}
+
+nav a {
+    color: #1f2937;
+    text-decoration: none;
+    margin-left: 1.25rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .right {
@@ -73,7 +87,8 @@ nav {
     background-color: #ffffff;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 160px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -102,7 +117,8 @@ nav {
 }
 
 .fa-solid {
-    padding: 5px;
+    width: 18px;
+    text-align: center;
 }
 
 .fa-house {
@@ -167,8 +183,6 @@ nav {
     height: 600px;
     overflow: hidden;
     position: relative;
-    margin-top: 60px;
-    /* offset fixed nav */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -422,6 +436,7 @@ nav {
     padding-bottom: 10px;
 }
 
+.footer .mainfooter,
 .mainfooter {
     display: flex;
     justify-content: space-around;
@@ -430,6 +445,12 @@ nav {
     padding: 40px 20px 20px;
 }
 
+.footer-section,
+.name {
+    max-width: 320px;
+}
+
+.footer-section h2,
 .name h2 {
     font-size: 26px;
     letter-spacing: 4px;
@@ -615,4 +636,169 @@ nav {
     .name p {
         max-width: 100%;
     }
+}
+
+/* CONTACT PAGE STYLES */
+
+.contactus {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.phone,
+.whattsapp,
+.e-mail {
+    width: 350px;
+    height: 250px;
+    background-color: rgb(210, 213, 218);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* --- SEARCH RESULTS CONTAINER --- */
+.results {
+    display: grid;
+    /* This creates a flexible grid that centers the cards */
+    grid-template-columns: repeat(auto-fit, 280px);
+    justify-content: center;
+    gap: 25px;
+
+    /* Pushes results away from Navbar and Footer */
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    /* Prevents cards from stretching too far apart */
+    min-height: 400px;
+    /* Keeps footer down if there are few results */
+}
+
+/* --- SEARCH CARD STRUCTURE --- */
+.results .card {
+    width: 280px;
+    /* Fixed width to match Homepage style */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+.results .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.results .card img {
+    width: 100%;
+    height: 180px;
+    /* Adjusted height so it's not "too large" */
+    object-fit: cover;
+}
+
+.results .card h3 {
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin: 15px 10px;
+    font-family: sans-serif;
+}
+
+.results .card button {
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #38bdf8;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.results .card button:hover {
+    background-color: #2563eb;
+}
+
+/* --- Missing Styles for Contact Us --- */
+.contactus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 80px 5%;
+    background: #f8fafc;
+}
+
+.phone,
+.whattsapp,
+.e-mail {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+}
+
+.phone:hover,
+.whattsapp:hover,
+.e-mail:hover {
+    transform: translateY(-10px);
+}
+
+.contactus h4 {
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+    color: #1f2937;
+}
+
+.contactus button {
+    margin-top: 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Centers the Search Page heading */
+.text {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Centers the About Us heading and the descriptive paragraph */
+.heading {
+    text-align: center;
+    max-width: 800px;
+    /* Keeps the paragraph from getting too wide/unreadable */
+    margin: 0 auto;
+    /* Centers the container itself */
+    padding: 20px;
+}
+
+/* Centers the standalone Contact Us heading and its paragraph */
+h1,
+p,
+.contactus {
+    text-align: center;
+}
+
+/* Universal fix for all main page titles */
+h1 {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
 }
