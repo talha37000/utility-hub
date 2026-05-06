@@ -524,39 +524,58 @@ nav a:hover {
 @media (max-width: 640px) {
 
    
-  
-    /* Reduce Nav height for mobile */
-   nav {
+ /* 1. Navbar Adjustments */
+    nav {
         gap: 5px !important;
         padding: 0 8px !important;
+        justify-content: space-between;
     }
 
-    /* 2. Make the logo smaller so it doesn't fight the search box */
+    /* 2. Logo Scaling */
     .logo {
-        width: 80px !important; /* Smaller logo for tight spaces */
+        width: 75px !important; /* Slightly smaller to make room for text */
     }
 
-    /* 3. The Search Box Fix */
+    /* 3. Search Box - High flexibility */
     .search-box {
-        flex: 1; /* Allows it to take only remaining space */
-        min-width: 100px; /* Smallest it can get */
-        max-width: 140px; /* Largest it can get in portrait mode */
-        border-width: 1px; /* Thinner border looks cleaner on mobile */
+        flex: 1;
+        min-width: 80px; 
+        max-width: 120px;
+        padding: 2px 5px !important;
     }
 
     .search-box input {
-        width: 100% !important;
-        font-size: 11px !important; /* Smaller text fits better */
-        padding: 2px 4px !important;
+        font-size: 10px !important;
     }
 
-    /* 4. Hide "Search tools..." placeholder text on very small screens */
-    /* This prevents the text from making the box too wide */
-    .search-box input::placeholder {
-        font-size: 10px;
-        opacity: 0.7;
+    /* 4. Quick Links - VISIBLE on Mobile */
+    nav > .right {
+        display: flex !important; /* Ensures it stays visible */
+        font-size: 12px; /* Smaller font to prevent overlap */
+        gap: 5px;
     }
 
+    nav > .right span {
+        display: inline !important; /* Forces the "Quick Links" text to show */
+    }
+
+    /* 5. Dropdown - Pro Sizing */
+    .dropdown {
+        left: 0 !important;
+        transform: none !important;
+        width: auto !important; /* Box fits the text width */
+        min-width: 150px; 
+        white-space: nowrap; /* Keeps icons and text on one line */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .dropdown a {
+        padding: 12px 15px !important;
+        font-size: 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important; /* Space between icon and text */
+    }
 
 
    
