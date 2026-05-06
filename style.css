@@ -23,9 +23,7 @@ body {
     font-family: sans-serif;
 }
 
-/* ============================================
-   NAVIGATION
-   ============================================ */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -38,7 +36,7 @@ nav {
     gap: 10px;
 }
 
-/* FIX: Logo was 200x200 inside a 60px nav */
+ */
 .logo {
 
     width: 120px;
@@ -175,9 +173,7 @@ nav a:hover {
     align-items: center;
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
+
 .hero-section {
     width: 100%;
     height: 600px;
@@ -287,9 +283,7 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* ============================================
-   SECTION HEADING
-   ============================================ */
+
 .heading {
     width: 100%;
     background-color: #e0f2fe;
@@ -304,13 +298,7 @@ nav a:hover {
     font-weight: bolder;
 }
 
-/* ============================================
-   TOOL CONTAINERS — UNIFIED RESPONSIVE LAYOUT
-   FIX: Replaced fixed heights + conflicting rules
-   with a single flexible system
-   ============================================ */
 
-/* All containers share base styles */
 [class^="container"] {
     width: 100%;
     padding: 40px 5%;
@@ -341,9 +329,7 @@ nav a:hover {
     flex-direction: row-reverse;
 }
 
-/* ============================================
-   CARDS — Single unified rule, no conflicts
-   ============================================ */
+
 [class^="container"] .card {
     flex: 0 0 auto;
     width: 100%;
@@ -401,9 +387,7 @@ nav a:hover {
     background-color: #2563eb;
 }
 
-/* ============================================
-   TEXT PARTS — Beside the card
-   ============================================ */
+
 .text-part {
     flex: 1;
     max-width: 500px;
@@ -426,9 +410,7 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+
 .footer {
     width: 100%;
     background-color: #1e293b;
@@ -504,9 +486,7 @@ nav a:hover {
     font-size: 15px;
 }
 
-/* ============================================
-   MEDIA QUERIES
-   ============================================ */
+
 
 /* --- TABLET (max 900px) --- */
 @media (max-width: 900px) {
@@ -540,10 +520,10 @@ nav a:hover {
     }
 }
 
-/* --- MOBILE (max 640px) --- */
+
 @media (max-width: 640px) {
 
-    /* Nav */
+   
     nav {
         justify-content: space-between;
         padding: 0 12px;
@@ -558,10 +538,24 @@ nav a:hover {
     nav>.right span {
         display: none;
     }
+    .dropdown {
+     
+        left: 0 !important; 
+        transform: none !important;
+        
+    
+        width: 180px; 
+        
+      
+        top: 100%; 
+    }
 
-    /* hide "Quick Links" text, keep icon */
+    .right {
+     
+        position: relative; 
+    }
 
-    /* Hero */
+   
     .hero-section {
         height: 320px;
     }
