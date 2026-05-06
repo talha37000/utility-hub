@@ -6,21 +6,59 @@
     --accent: #6366f1;
 }
 
+/* --- 1. GLOBAL LAYOUT FIX --- */
 body {
     margin: 0;
-    background-color: var(--bg);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
+    background-color: var(--bg);
     font-family: 'Segoe UI', system-ui, sans-serif;
     color: var(--text);
 }
 
+.tool-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+/* --- 2. SEARCH BOX FIX (Locks Navbar UI) --- */
+.main-nav-form {
+    display: flex !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 5px 10px !important;
+    border: 1px solid #ddd !important;
+}
+
+.main-nav-form input {
+    background: transparent !important;
+    border: none !important;
+    color: #333 !important;
+    width: 150px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    box-shadow: none !important;
+    /* Removes neumorphic inset shadow */
+    padding: 0 5px !important;
+}
+
+.main-nav-form button {
+    background: transparent !important;
+    color: #666 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* --- 3. NEUMORPHIC TOOL STYLES --- */
 .neumorphic-card {
     background: var(--bg);
     padding: 40px;
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     border-radius: 30px;
     box-shadow: 20px 20px 60px var(--shadow-dark),
         -20px -20px 60px var(--shadow-light);
@@ -40,7 +78,7 @@ body {
     margin-bottom: 30px;
 }
 
-label {
+.input-section label {
     display: block;
     margin-bottom: 10px;
     font-weight: 600;
@@ -48,7 +86,8 @@ label {
     padding-left: 10px;
 }
 
-input {
+/* Target tool input specifically to avoid navbar conflict */
+.neumorphic-card input {
     width: 100%;
     box-sizing: border-box;
     padding: 15px 20px;
@@ -63,7 +102,7 @@ input {
     transition: 0.3s;
 }
 
-input:focus {
+.neumorphic-card input:focus {
     color: var(--accent);
 }
 

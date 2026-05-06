@@ -4,42 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeightLink | Smart Converter</title>
+    <title>WeightLink | Smart Converter - Utility Hub</title>
+    <!-- Main Site Styles & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Global Main CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Local Tool CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="navbar"></div>
 
-    <div class="neumorphic-card">
-        <h1 class="heading">WeightLink</h1>
-
-        <div class="input-section">
-            <label for="number">Pounds (lbs)</label>
-            <input type="number" id="number" placeholder="0.00" step="0.1">
-        </div>
-
-        <div class="results-grid">
-            <div class="result-box">
-                <span class="unit-label">Kilograms</span>
-                <p id="kg-res">0.00</p>
+    <!-- 1. NAVBAR -->
+    <div class="navbar">
+        <nav>
+            <div class="right">
+                <i class="fa-solid fa-bars"></i>
+                <span>Quick Links</span>
+                <div class="dropdown">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
+                    <a href="../AboutUs.html"><i class="fa-solid fa-circle-info"></i><span> About Us</span></a>
+                    <a href="../contactUs.html"><i class="fa-solid fa-phone"></i><span> Contact Us</span></a>
+                </div>
             </div>
-            <div class="result-box">
-                <span class="unit-label">Grams</span>
-                <p id="gm-res">0</p>
-            </div>
-            <div class="result-box">
-                <span class="unit-label">Ounces</span>
-                <p id="oz-res">0.00</p>
-            </div>
-        </div>
-
-        <p id="error" class="error-msg"></p>
+            <a href="../index.html">
+                <img class="logo" src="../media/gemini-svg.svg" alt="logo">
+            </a>
+            <form class="search-box main-nav-form" action="../search.html" method="get">
+                <input type="text" name="q" placeholder="Search tools..." required>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </nav>
     </div>
-    <script src="index.js"></script>
 
-    <div id="footer"></div>
-    <script src="../layout.js"></script>
+    <!-- 2. TOOL CONTENT -->
+    <main class="tool-wrapper">
+        <div class="neumorphic-card">
+            <h1 class="heading">WeightLink</h1>
+
+            <!-- Main Input Section -->
+            <div class="input-section">
+                <label for="number">Weight in Pounds (lbs)</label>
+                <input type="number" id="number" placeholder="Enter weight..." step="0.1">
+            </div>
+
+            <!-- Professional Results Dashboard -->
+            <div class="results-grid">
+                <!-- Kilograms Display -->
+                <div class="result-box">
+                    <span class="unit-label">Kilograms</span>
+                    <p id="kg-res">0.00</p>
+                </div>
+
+                <!-- Grams Display -->
+                <div class="result-box">
+                    <span class="unit-label">Grams</span>
+                    <p id="gm-res">0</p>
+                </div>
+
+                <!-- Ounces Display -->
+                <div class="result-box">
+                    <span class="unit-label">Ounces</span>
+                    <p id="oz-res">0.00</p>
+                </div>
+            </div>
+
+            <!-- Error Feedback Message -->
+            <p id="error" class="error-msg"></p>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER -->
+    <div class="footer">
+        <div class="mainfooter">
+            <div class="name">
+                <h2>Utility Hub</h2>
+                <p>Simplifying everyday tasks with smart, fast, and reliable tools.</p>
+            </div>
+            <div class="explore">
+                <h2>Explore</h2>
+                <a href="../index.html">Home</a>
+                <a href="../index.html#heading">All Tools</a>
+                <a href="../AboutUs.html">Features</a>
+                <a href="../contactUs.html">Contact</a>
+            </div>
+            <div class="populartools">
+                <h2>Popular Tools</h2>
+                <a href="../basic calculator/index.html">Calculator</a>
+                <a href="../BMI CALCULATOR/INDEX.HTML">BMI Calculator</a>
+                <a href="../CURRENCY CONVERTER/INDEX.HTML">Currency Convertor</a>
+                <a href="../RANDOM PASSWORD GENERATOR/index.html">Password Generator</a>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>© 2026 Utility Hub • Built with simplicity in mind</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

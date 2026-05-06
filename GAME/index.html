@@ -4,48 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Arena: RPS</title>
+    <title>Neon Arena: RPS - Utility Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
     <!-- Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
-    <div id="navbar"></div>
 
-    <div class="container">
-        <div class="round-badge">Round <span id="round-num">1</span>/5</div>
-        <h2>Neon Arena</h2>
-
-        <div class="score-board">
-            <div class="score-card">
-                <small>PLAYER</small>
-                <span id="myscore">0</span>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <nav>
+            <div class="right">
+                <i class="fa-solid fa-bars"></i>
+                <span>Quick Links</span>
+                <div class="dropdown">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
+                    <a href="../AboutUs.html"><i class="fa-solid fa-circle-info"></i><span> About Us</span></a>
+                    <a href="../contactUs.html"><i class="fa-solid fa-phone"></i><span> Contact Us</span></a>
+                </div>
             </div>
-            <div class="vs">VS</div>
-            <div class="score-card">
-                <small>CPU</small>
-                <span id="computerscore">0</span>
-            </div>
-        </div>
-
-        <div class="buttons">
-            <button id="rock" class="move-btn">✊</button>
-            <button id="paper" class="move-btn">✋</button>
-            <button id="scissors" class="move-btn">✌️</button>
-        </div>
-
-        <div class="display-area">
-            <p id="result">Ready for Round 1?</p>
-            <p id="history-peak">High Score: <span id="high-score">0</span></p>
-        </div>
-
-        <button id="reset-game">Reset Arena</button>
+            <a href="../index.html">
+                <img class="logo" src="../media/gemini-svg.svg" alt="logo">
+            </a>
+            <form class="search-box main-nav-form" action="../search.html" method="get">
+                <input type="text" name="q" placeholder="Search tools..." required>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </nav>
     </div>
-    <script src="index.js"></script>
 
-    <div id="footer"></div>
-    <script src="../layout.js"></script>
+    <!-- GAME CONTENT -->
+    <main class="tool-wrapper">
+        <div class="container">
+            <div class="round-badge">Round <span id="round-num">1</span>/5</div>
+            <h2>Neon Arena</h2>
+
+            <div class="score-board">
+                <div class="score-card">
+                    <small>PLAYER</small>
+                    <span id="myscore">0</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="score-card">
+                    <small>CPU</small>
+                    <span id="computerscore">0</span>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="rock" class="move-btn">✊</button>
+                <button id="paper" class="move-btn">✋</button>
+                <button id="scissors" class="move-btn">✌️</button>
+            </div>
+
+            <div class="display-area">
+                <p id="result">Ready for Round 1?</p>
+                <p id="history-peak">High Score: <span id="high-score">0</span></p>
+            </div>
+
+            <button id="reset-game">Reset Arena</button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="mainfooter">
+            <div class="name">
+                <h2>Utility Hub</h2>
+                <p>Simplifying everyday tasks with smart, fast, and reliable tools.</p>
+            </div>
+            <div class="explore">
+                <h2>Explore</h2>
+                <a href="../index.html">Home</a>
+                <a href="../index.html#heading">All Tools</a>
+                <a href="../AboutUs.html">Features</a>
+                <a href="../contactUs.html">Contact</a>
+            </div>
+            <div class="populartools">
+                <h2>Popular Tools</h2>
+                <a href="../basic calculator/index.html">Calculator</a>
+                <a href="../BMI CALCULATOR/INDEX.HTML">BMI Calculator</a>
+                <a href="../CURRENCY CONVERTER/INDEX.HTML">Currency Convertor</a>
+                <a href="../RANDOM PASSWORD GENERATOR/index.html">Password Generator</a>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>© 2026 Utility Hub • Built with simplicity in mind</p>
+        </div>
+    </div>
+
+    <script src="../index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

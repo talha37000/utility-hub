@@ -6,37 +6,64 @@
     --text: #1e293b;
 }
 
+/* Base Layout */
 body {
     margin: 0;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg);
     color: var(--text);
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
+
+    align-items: stretch;
+    justify-content: flex-start;
 }
 
+/* MAIN (merged + improved spacing + gradient) */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px;
+    /* merged (50px → 80px) */
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* CONTAINER (merged + improved) */
 .container {
-    width: 90%;
-    max-width: 450px;
+    width: 95%;
+    max-width: 500px;
+    /* upgraded from 450px */
+
     background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 24px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 3rem;
+    /* upgraded from 2.5rem */
+    border-radius: 28px;
+
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+
     text-align: center;
+    margin: 20px auto;
 }
 
+/* Heading */
 h1 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 800;
 }
 
+/* FORM (merged gap improvement) */
 #form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+    /* upgraded */
 }
 
 label {
@@ -81,28 +108,32 @@ button:active {
     transform: translateY(0);
 }
 
-/* Results Styling */
+/* RESULT SECTION (merged improvements) */
 #result-container {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #f1f5f9;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid #f1f5f9;
 }
 
 .hidden {
     display: none;
 }
 
+/* STATS GRID */
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 15px;
+    /* upgraded */
     margin-top: 15px;
 }
 
 .stat-box {
     background: #f1f5f9;
-    padding: 15px 5px;
+    padding: 20px 10px;
+    /* upgraded */
     border-radius: 12px;
+
     display: flex;
     flex-direction: column;
 }

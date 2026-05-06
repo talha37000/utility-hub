@@ -4,54 +4,110 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VaultGen | Secure Password Generator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <title>VaultGen | Secure Password Generator - Utility Hub</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Global Main CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Local Tool CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div id="navbar"></div>
+    <!-- 1. NAVBAR -->
+    <div class="navbar">
+        <nav>
+            <div class="right">
+                <i class="fa-solid fa-bars"></i>
+                <span>Quick Links</span>
+                <div class="dropdown">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
+                    <a href="../AboutUs.html"><i class="fa-solid fa-circle-info"></i><span> About Us</span></a>
+                    <a href="../contactUs.html"><i class="fa-solid fa-phone"></i><span> Contact Us</span></a>
+                </div>
+            </div>
+            <a href="../index.html">
+                <img class="logo" src="../media/gemini-svg.svg" alt="logo">
+            </a>
+            <form class="search-box main-nav-form" action="../search.html" method="get">
+                <input type="text" name="q" placeholder="Search tools..." required>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
 
-    <div class="glass-vault">
-        <div class="header">
-            <i class="fas fa-shield-alt"></i>
-            <h2>VaultGen</h2>
-        </div>
+    <!-- 2. TOOL CONTENT -->
+    <main class="tool-wrapper">
+        <div class="glass-vault">
+            <div class="header">
+                <i class="fas fa-shield-alt"></i>
+                <h2>VaultGen</h2>
+            </div>
 
-        <div class="display-box">
-            <input type="text" id="input" placeholder="Click Generate" readonly />
-            <button class="copy-btn" title="Copy to Clipboard">
-                <i class="far fa-copy"></i>
+            <div class="display-box">
+                <input type="text" id="input" placeholder="Click Generate" readonly />
+                <button class="copy-btn" title="Copy to Clipboard">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="strength-meter">
+                <div id="strength-bar"></div>
+            </div>
+
+            <div class="settings">
+                <div class="length-header">
+                    <span>Password Length</span>
+                    <span id="length-val">14</span>
+                </div>
+                <input type="range" id="length-slider" min="8" max="32" value="14" />
+            </div>
+
+            <button class="btn-generate">
+                <span>Generate Secure Key</span>
+                <i class="fas fa-sync-alt"></i>
             </button>
         </div>
 
-        <div class="strength-meter">
-            <div id="strength-bar"></div>
+        <!-- Notification Pop-up stays inside main to avoid layout breaks -->
+        <div class="notification" id="alert">
+            <i class="fas fa-check-circle"></i>
+            <span>Copied to Clipboard</span>
         </div>
+    </main>
 
-        <div class="settings">
-            <div class="length-header">
-                <span>Password Length</span>
-                <span id="length-val">14</span>
+    <!-- 3. FOOTER -->
+    <div class="footer">
+        <div class="mainfooter">
+            <div class="name">
+                <h2>Utility Hub</h2>
+                <p>Simplifying everyday tasks with smart, fast, and reliable tools — all in one place.</p>
             </div>
-            <input type="range" id="length-slider" min="8" max="32" value="14" />
+            <div class="explore">
+                <h2>Explore</h2>
+                <a href="../index.html">Home</a>
+                <a href="../index.html#heading">All Tools</a>
+                <a href="../AboutUs.html">Features</a>
+                <a href="../contactUs.html">Contact</a>
+            </div>
+            <div class="populartools">
+                <h2>Popular Tools</h2>
+                <a href="../basic calculator/index.html">Calculator</a>
+                <a href="../BMI CALCULATOR/INDEX.HTML">BMI Calculator</a>
+                <a href="../CURRENCY CONVERTER/INDEX.HTML">Currency Convertor</a>
+                <a href="../RANDOM PASSWORD GENERATOR/index.html">Password Generator</a>
+            </div>
         </div>
-
-        <button class="btn-generate">
-            <span>Generate Secure Key</span>
-            <i class="fas fa-sync-alt"></i>
-        </button>
+        <div class="bottom">
+            <p>© 2026 Utility Hub • Built with simplicity in mind</p>
+        </div>
     </div>
 
-    <div class="notification" id="alert">
-        <i class="fas fa-check-circle"></i>
-        <span>Copied to Clipboard</span>
-    </div>
-
-    <script src="index.js"></script>
-
-    <div id="footer"></div>
-    <script src="../layout.js"></script>
+    <!-- Scripts -->
+    <script src="../index.js"></script> <!-- Navbar/General logic -->
+    <script src="index.js"></script> <!-- Generator logic -->
 </body>
 
 </html>

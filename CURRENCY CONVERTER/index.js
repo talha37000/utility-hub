@@ -5,7 +5,6 @@ const secondInp = document.getElementById("inp-second");
 const exchangeRate = document.getElementById("exchange-rate");
 const swapBtn = document.getElementById("swap-btn");
 
-// Your API Key
 const API_KEY = "7dcc4f8b8caaaad5352b8481";
 
 async function updateRate() {
@@ -27,7 +26,7 @@ async function updateRate() {
     }
 }
 
-// Swap currencies functionality
+
 swapBtn.addEventListener("click", () => {
     const temp = firstCurr.value;
     firstCurr.value = secondCurr.value;
@@ -39,5 +38,5 @@ firstCurr.addEventListener("change", updateRate);
 secondCurr.addEventListener("change", updateRate);
 firstInp.addEventListener("input", updateRate);
 
-// Initialize
+
 updateRate();

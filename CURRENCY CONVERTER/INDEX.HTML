@@ -4,63 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Exchange</title>
+    <title>Quantum Exchange | Currency Converter - Utility Hub</title>
+    <!-- Main Site Styles & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Global Main CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Local Tool CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="navbar"></div>
 
-    <div class="glass-card">
-        <h1>Quantum Exchange</h1>
+    <!-- 1. NAVBAR -->
+    <div class="navbar">
+        <nav>
+            <div class="right">
+                <i class="fa-solid fa-bars"></i>
+                <span>Quick Links</span>
+                <div class="dropdown">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
+                    <a href="../AboutUs.html"><i class="fa-solid fa-circle-info"></i><span> About Us</span></a>
+                    <a href="../contactUs.html"><i class="fa-solid fa-phone"></i><span> Contact Us</span></a>
+                </div>
+            </div>
+            <a href="../index.html">
+                <img class="logo" src="../media/gemini-svg.svg" alt="logo">
+            </a>
+            <form class="search-box main-nav-form" action="../search.html" method="get">
+                <input type="text" name="q" placeholder="Search tools..." required>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
 
-        <div class="input-group">
-            <div class="currency-row">
-                <select id="currency-first">
-                    <option value="USD" selected>USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="INR">INR - Indian Rupee</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="CHF">CHF - Swiss Franc</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="SGD">SGD - Singapore Dollar</option>
-                    <option value="AED">AED - UAE Dirham</option>
-                    <option value="SAR">SAR - Saudi Riyal</option>
-                </select>
-                <input type="number" id="inp-first" value="1" min="0">
+    <!-- 2. TOOL CONTENT -->
+    <main class="tool-wrapper">
+        <div class="glass-card">
+            <h1>Quantum Exchange</h1>
+
+            <div class="input-group">
+                <div class="currency-row">
+                    <select id="currency-first">
+                        <option value="USD" selected>USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="SGD">SGD - Singapore Dollar</option>
+                        <option value="AED">AED - UAE Dirham</option>
+                        <option value="SAR">SAR - Saudi Riyal</option>
+                    </select>
+                    <input type="number" id="inp-first" value="1" min="0">
+                </div>
+
+                <div class="swap-container">
+                    <button id="swap-btn">⇄</button>
+                </div>
+
+                <div class="currency-row">
+                    <select id="currency-second">
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="INR" selected>INR - Indian Rupee</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="SGD">SGD - Singapore Dollar</option>
+                        <option value="AED">AED - UAE Dirham</option>
+                    </select>
+                    <input type="number" id="inp-second" readonly>
+                </div>
             </div>
 
-            <div class="swap-container">
-                <button id="swap-btn">⇄</button>
-            </div>
-
-            <div class="currency-row">
-                <select id="currency-second">
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="INR" selected>INR - Indian Rupee</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="CHF">CHF - Swiss Franc</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="SGD">SGD - Singapore Dollar</option>
-                    <option value="AED">AED - UAE Dirham</option>
-                </select>
-                <input type="number" id="inp-second" readonly>
+            <div class="rate-display">
+                <p id="exchange-rate">Fetching latest data...</p>
             </div>
         </div>
+    </main>
 
-        <div class="rate-display">
-            <p id="exchange-rate">Fetching latest data...</p>
+    <!-- 3. FOOTER -->
+    <div class="footer">
+        <div class="mainfooter">
+            <div class="name">
+                <h2>Utility Hub</h2>
+                <p>Simplifying everyday tasks with smart, fast, and reliable tools.</p>
+            </div>
+            <div class="explore">
+                <h2>Explore</h2>
+                <a href="../index.html">Home</a>
+                <a href="../index.html#heading">All Tools</a>
+                <a href="../AboutUs.html">Features</a>
+                <a href="../contactUs.html">Contact</a>
+            </div>
+            <div class="populartools">
+                <h2>Popular Tools</h2>
+                <a href="../basic calculator/index.html">Calculator</a>
+                <a href="../BMI CALCULATOR/INDEX.HTML">BMI Calculator</a>
+                <a href="../CURRENCY CONVERTER/INDEX.HTML">Currency Convertor</a>
+                <a href="../RANDOM PASSWORD GENERATOR/index.html">Password Generator</a>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>© 2026 Utility Hub • Built with simplicity in mind</p>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="../index.js"></script>
     <script src="index.js"></script>
-    <div id="footer"></div>
-
+</body>
 
 </html>

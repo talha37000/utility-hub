@@ -1,48 +1,71 @@
 const imgEl = document.querySelector(".slider");
-const rightEl = document.querySelector(".fa-angles-right");
-const leftEl = document.querySelector(".fa-angles-left");
 const imgAll = document.querySelectorAll(".slider img");
-const dotEl = document.querySelector(".dots");
-let indx = 1;
-let abc;
+const dotContainer = document.querySelector(".dots");
+const rightBtn = document.querySelector(".fa-angles-right");
+const leftBtn = document.querySelector(".fa-angles-left");
 
-imgAll.forEach((_, index) => {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    dot.addEventListener("click", () => {
-        indx = index + 1;
-        clearTimeout(abc);
-        updateImg();
-    })
-    dotEl.appendChild(dot);
-})
+let indx = 0;
+let timer;
 
-rightEl.addEventListener("click", () => {
-    indx++;
-    clearTimeout(abc);
-    updateImg();
-})
-leftEl.addEventListener("click", () => {
-    indx--;
-    clearTimeout(abc);
-    updateImg();
-})
-updateImg();
-function updateImg() {
-    if (indx > imgAll.length) {
-        indx = 1;
-    } else if (indx < 1) {
-        indx = imgAll.length;
-    }
-    imgEl.style.transform = `translateX(-${(indx - 1) * imgEl.clientWidth}px)`;
-    const dots1 = document.querySelectorAll(".dot");
-    dots1.forEach(dot => dot.classList.remove("active"));
-    dots1[indx - 1].classList.add("active");
-    abc = setTimeout(() => {
-        indx++;
-        updateImg();
-    }, 4000);
+// 1. Generate the dots based on the number of images
+function initDots() {
+    dotContainer.innerHTML = ""; // Ensure it's empty before starting
+    imgAll.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active"); // First dot starts active
+
+        // Add click event to each dot
+        dot.addEventListener("click", () => {
+            indx = i;
+            updateSlider();
+        });
+        dotContainer.appendChild(dot);
+    });
 }
-window.addEventListener('resize', () => {
-    updateImg(); // Re-calculates width on resize
+
+// 2. The main update function
+function updateSlider() {
+    // Handle boundaries
+    if (indx >= imgAll.length) indx = 0;
+    if (indx < 0) indx = imgAll.length - 1;
+
+    // Use percentage move for smooth responsiveness
+    imgEl.style.transform = `translateX(-${indx * 100}%)`;
+
+    // Update Dot active states
+    const allDots = document.querySelectorAll(".dot");
+    allDots.forEach((dot, i) => {
+        if (i === indx) {
+            dot.classList.add("active");
+        } else {
+            dot.classList.remove("active");
+        }
+    });
+
+    // Reset the auto-play timer whenever a move happens
+    startAutoPlay();
+}
+
+// 3. Controls
+function startAutoPlay() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+        indx++;
+        updateSlider();
+    }, 5000); // 5 seconds per slide
+}
+
+rightBtn.addEventListener("click", () => {
+    indx++;
+    updateSlider();
 });
+
+leftBtn.addEventListener("click", () => {
+    indx--;
+    updateSlider();
+});
+
+// INITIALIZE
+initDots();
+startAutoPlay();
