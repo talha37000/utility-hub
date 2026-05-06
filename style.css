@@ -524,30 +524,38 @@ nav a:hover {
 @media (max-width: 640px) {
 
    
-   @media (max-width: 640px) {
+  
     /* Reduce Nav height for mobile */
-    nav {
-        padding: 0 10px;
-        min-height: 50px;
+   nav {
+        gap: 5px !important;
+        padding: 0 8px !important;
     }
 
-    /* FIX 1: Shrink Logo for mobile screens */
+    /* 2. Make the logo smaller so it doesn't fight the search box */
     .logo {
-        width: 90px; /* Reduced from 120px */
+        width: 80px !important; /* Smaller logo for tight spaces */
     }
 
-    /* FIX 2: Flexible Search Box */
+    /* 3. The Search Box Fix */
     .search-box {
-        flex: 1; /* Allows it to shrink/grow based on available space */
-        max-width: 150px; /* Prevents it from pushing everything off-screen */
-        margin: 0 5px;
+        flex: 1; /* Allows it to take only remaining space */
+        min-width: 100px; /* Smallest it can get */
+        max-width: 140px; /* Largest it can get in portrait mode */
+        border-width: 1px; /* Thinner border looks cleaner on mobile */
     }
 
     .search-box input {
-        width: 100%; /* Fills the flex container */
-        font-size: 12px;
+        width: 100% !important;
+        font-size: 11px !important; /* Smaller text fits better */
+        padding: 2px 4px !important;
     }
 
+    /* 4. Hide "Search tools..." placeholder text on very small screens */
+    /* This prevents the text from making the box too wide */
+    .search-box input::placeholder {
+        font-size: 10px;
+        opacity: 0.7;
+    }
     /* FIX 3: Dropdown fits text size */
     nav > .right span {
         display: none; /* Keep "Quick Links" hidden on small mobile */
