@@ -536,17 +536,11 @@ nav a:hover {
         width: 75px !important; /* Slightly smaller to make room for text */
     }
 
-    /* 3. Search Box - High flexibility */
-    .search-box {
-        flex: 1;
-        min-width: 80px; 
-        max-width: 120px;
-        padding: 2px 5px !important;
-    }
+      .search-box input {
+        width: 130px;
+        font-size: 13px;
+    }/* 3. Search Box - High flexibility */
 
-    .search-box input {
-        font-size: 10px !important;
-    }
 
     /* 4. Quick Links - VISIBLE on Mobile */
     nav > .right {
